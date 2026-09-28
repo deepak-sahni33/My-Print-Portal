@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print Portal Amit – Online Print Service Portal</title>
+  <meta name="description" content="PrintEase is your one-stop online print portal. Upload files, choose print options, and get professional prints delivered. Track your order with a unique ID." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo" onclick="showPage('home')">
+      <div class="logo-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+      </div>
+      Print<span>Ease</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home')" class="nav-link" data-page="home">Home</a></li>
+      <li><a href="#" onclick="showPage('order')" class="nav-link" data-page="order">New Order</a></li>
+      <li><a href="#" onclick="showPage('track')" class="nav-link" data-page="track">Track Order</a></li>
+      <li><a href="#" onclick="showPage('admin')" class="nav-link nav-admin" data-page="admin">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===================== HOME PAGE ===================== -->
+<section id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Fast &amp; Reliable Printing
+      </div>
+      <h1>Professional Printing,<br /><span class="gradient-text">Delivered to You</span></h1>
+      <p>Upload your files, choose your print settings, and get professional-quality prints ready for pickup. Simple, fast, and affordable.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" onclick="showPage('order')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Start Printing Now
+        </button>
+        <button class="btn btn-outline btn-lg" onclick="showPage('track')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Track My Order
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+          <span>Order #PE-2024-0042</span>
+        </div>
+        <div class="hc-status ready">Ready for Pickup</div>
+        <div class="hc-details">
+          <div class="hc-row"><span>File</span><span>Report.pdf</span></div>
+          <div class="hc-row"><span>Pages</span><span>24 pages</span></div>
+          <div class="hc-row"><span>Type</span><span>Color, A4</span></div>
+          <div class="hc-row"><span>Copies</span><span>3</span></div>
+          <div class="hc-total"><span>Total</span><span>₹216.00</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose PrintEase?</h2>
+        <p>Everything you need for professional printing in one place.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Easy File Upload</h3>
+          <p>Drag and drop PDF, DOCX, JPG, or PNG files. We handle the rest.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon indigo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Live Price Calculation</h3>
+          <p>See the total price update instantly as you change print settings.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Order Tracking</h3>
+          <p>Track your order status in real time using your unique Order ID.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Multiple Options</h3>
+          <p>Choose from B&amp;W or Color, Single or Double side, A4 / A3 / Legal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees. See exactly what you pay before confirming.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.65a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+          </div>
+          <h3>Quick Turnaround</h3>
+          <p>Fast processing so your prints are ready when you need them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Three simple steps to get your documents printed.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Upload Your File</h3>
+          <p>Upload your PDF, DOCX, or image files securely.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2a2 2 0 0 1 0 4 2 2 0 0 1 0-4M12 18a2 2 0 0 1 0 4 2 2 0 0 1 0-4"/></svg>
+          </div>
+          <h3>Choose Settings</h3>
+          <p>Select color, sides, paper size, and number of copies.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Confirm &amp; Track</h3>
+          <p>Place your order and track it using your unique Order ID.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo" style="color:#fff;font-size:1.3rem">
+            <div class="logo-icon" style="background:rgba(255,255,255,0.15)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            </div>
+            Print<span style="color:#93c5fd">Ease</span>
+          </div>
+          <p>Professional printing services made simple. Upload, configure, and pick up your prints hassle-free.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#" onclick="showPage('home')">Home</a>
+          <a href="#" onclick="showPage('order')">New Order</a>
+          <a href="#" onclick="showPage('track')">Track Order</a>
+          <a href="#" onclick="showPage('admin')">Admin</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📍 Katasa Chowk, Singhwara, Darbhanga</p>
+          <p>📞 +91 7870386245</p>
+          <p>✉️ deepaksahni3345@gmail.com</p>
+          <p>🕐 Mon–Sat: 9 AM – 8 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Amit Cyber Cafe. All rights reserved.</p>
+        <p>💻Developed by Deepak Sahni 🚀</p>
+        <p>🎓GitHub <a href="https://github.com/deepak-sahni33" target="_blank">(deepak-sahni33)</a></p>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ===================== ORDER PAGE ===================== -->
+<section id="page-order" class="page">
+  <div class="page-header">
+    <div class="container">
+      <h1>New Print Order</h1>
+      <p>Upload your files and configure your print settings below.</p>
+    </div>
+  </div>
+  <div class="container order-layout">
+
+    <!-- LEFT: Form -->
+    <div class="order-form-col">
+
+      <!-- Step 1: Upload -->
+      <div class="form-section" id="step-upload">
+        <div class="form-section-header">
+          <div class="step-badge">1</div>
+          <div>
+            <h2>Upload Files</h2>
+            <p>Supported: PDF, DOCX, JPG, PNG (max 20MB each)</p>
+          </div>
+        </div>
+        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+          <input type="file" id="fileInput" multiple accept=".pdf,.docx,.jpg,.jpeg,.png" onchange="handleFileSelect(event)" style="display:none" />
+          <div class="upload-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <p class="upload-title">Drag & Drop files here</p>
+          <p class="upload-sub">or click to browse</p>
+          <div class="upload-types">
+            <span>PDF</span><span>DOCX</span><span>JPG</span><span>PNG</span>
+          </div>
+        </div>
+        <div id="fileList" class="file-list"></div>
+      </div>
+
+      <!-- Step 2: Print Options -->
+      <div class="form-section" id="step-options">
+        <div class="form-section-header">
+          <div class="step-badge">2</div>
+          <div>
+            <h2>Print Settings</h2>
+            <p>Configure how you want your documents printed.</p>
+          </div>
+        </div>
+
+        <div class="options-grid">
+          <!-- Color Mode -->
+          <div class="option-group">
+            <label class="option-label">Color Mode</label>
+            <div class="option-cards" id="colorMode">
+              <div class="option-card selected" data-value="bw" onclick="selectOption('colorMode', 'bw', this)">
+                <div class="oc-icon">⬜</div>
+                <div class="oc-title">Black & White</div>
+                <div class="oc-price" id="bw-price">₹2/page</div>
+              </div>
+              <div class="option-card" data-value="color" onclick="selectOption('colorMode', 'color', this)">
+                <div class="oc-icon">🎨</div>
+                <div class="oc-title">Color</div>
+                <div class="oc-price" id="color-price">₹8/page</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sides -->
+          <div class="option-group">
+            <label class="option-label">Sides</label>
+            <div class="option-cards" id="sideMode">
+              <div class="option-card selected" data-value="single" onclick="selectOption('sideMode', 'single', this)">
+                <div class="oc-icon">📄</div>
+                <div class="oc-title">Single Side</div>
+                <div class="oc-price">Standard</div>
+              </div>
+              <div class="option-card" data-value="double" onclick="selectOption('sideMode', 'double', this)">
+                <div class="oc-icon">📋</div>
+                <div class="oc-title">Double Side</div>
+                <div class="oc-price">+₹0 extra</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paper Size -->
+          <div class="option-group">
+            <label class="option-label">Paper Size</label>
+            <div class="option-cards three-col" id="paperSize">
+              <div class="option-card selected" data-value="a4" onclick="selectOption('paperSize', 'a4', this)">
+                <div class="oc-title">A4</div>
+                <div class="oc-price">Standard</div>
+              </div>
+              <div class="option-card" data-value="a3" onclick="selectOption('paperSize', 'a3', this)">
+                <div class="oc-title">A3</div>
+                <div class="oc-price">+₹2/page</div>
+              </div>
+              <div class="option-card" data-value="legal" onclick="selectOption('paperSize', 'legal', this)">
+                <div class="oc-title">Legal</div>
+                <div class="oc-price">+₹1/page</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copies -->
+          <div class="option-group">
+            <label class="option-label">Number of Copies</label>
+            <div class="copies-control">
+              <button class="copy-btn" onclick="changeCopies(-1)" id="decBtn">−</button>
+              <input type="number" id="copiesInput" value="1" min="1" max="100" oninput="updateCopies()" />
+              <button class="copy-btn" onclick="changeCopies(1)">+</button>
+            </div>
+          </div>
+
+          <!-- Pages per file -->
+          <div class="option-group full-width">
+            <label class="option-label">Pages in Document <span class="hint">(enter total pages if known)</span></label>
+            <div class="pages-input-row">
+              <input type="number" id="pagesInput" class="text-input" value="1" min="1" placeholder="e.g. 10" oninput="updatePrice()" />
+              <span class="pages-note">pages per file</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Customer Details -->
+      <div class="form-section" id="step-customer">
+        <div class="form-section-header">
+          <div class="step-badge">3</div>
+          <div>
+            <h2>Your Details</h2>
+            <p>We'll use this to notify you when your order is ready.</p>
+          </div>
+        </div>
+        <div class="customer-form">
+          <div class="field-group">
+            <label for="custName">Full Name <span class="required">*</span></label>
+            <input type="text" id="custName" class="text-input" placeholder="e.g. Priya Sharma" oninput="updateSummary()" />
+            <span class="field-error" id="nameError"></span>
+          </div>
+          <div class="field-group">
+            <label for="custPhone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="custPhone" class="text-input" placeholder="e.g. 9876543210" oninput="updateSummary()" />
+            <span class="field-error" id="phoneError"></span>
+          </div>
+          <div class="field-group">
+            <label for="custEmail">Email Address <span class="optional">(Optional)</span></label>
+            <input type="email" id="custEmail" class="text-input" placeholder="e.g. priya@example.com" oninput="updateSummary()" />
+          </div>
+          <div class="field-group">
+            <label for="custNotes">Special Notes <span class="optional">(Optional)</span></label>
+            <textarea id="custNotes" class="text-input textarea" placeholder="Any special instructions for printing..." rows="3" oninput="updateSummary()"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Price Summary -->
+    <div class="order-summary-col">
+      <div class="summary-card" id="summaryCard">
+        <div class="summary-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Price Summary
+        </div>
+        <div class="summary-rows">
+          <div class="summary-row">
+            <span>Files</span>
+            <span id="sum-files">0 file(s)</span>
+          </div>
+          <div class="summary-row">
+            <span>Pages</span>
+            <span id="sum-pages">1 page(s)</span>
+          </div>
+          <div class="summary-row">
+            <span>Color Mode</span>
+            <span id="sum-color">Black & White</span>
+          </div>
+          <div class="summary-row">
+            <span>Sides</span>
+            <span id="sum-sides">Single Side</span>
+          </div>
+          <div class="summary-row">
+            <span>Paper Size</span>
+            <span id="sum-paper">A4</span>
+          </div>
+          <div class="summary-row">
+            <span>Copies</span>
+            <span id="sum-copies">1</span>
+          </div>
+          <div class="summary-row">
+            <span>Price/Page</span>
+            <span id="sum-ppp">₹2.00</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="sum-total">₹2.00</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" id="placeOrderBtn" onclick="showOrderPreview()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Review &amp; Place Order
+        </button>
+        <p class="summary-note">You'll review your order before it's placed.</p>
+      </div>
+
+      <!-- Pricing Reference -->
+      <div class="pricing-ref-card">
+        <div class="pricing-ref-title">Pricing Guide</div>
+        <table class="pricing-table" id="pricingTableRef">
+          <tr><th>Type</th><th>Price/Page</th></tr>
+          <tr><td>B&W (A4)</td><td id="ref-bw-a4">₹2</td></tr>
+          <tr><td>Color (A4)</td><td id="ref-color-a4">₹8</td></tr>
+          <tr><td>B&W (A3)</td><td id="ref-bw-a3">₹4</td></tr>
+          <tr><td>Color (A3)</td><td id="ref-color-a3">₹10</td></tr>
+          <tr><td>B&W (Legal)</td><td id="ref-bw-legal">₹3</td></tr>
+          <tr><td>Color (Legal)</td><td id="ref-color-legal">₹9</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ORDER PREVIEW MODAL ===================== -->
+<div class="modal-overlay" id="previewModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Order Summary</h2>
+      <button class="modal-close" onclick="closeModal('previewModal')">✕</button>
+    </div>
+    <div class="modal-body" id="previewContent">
+      <!-- filled by JS -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('previewModal')">Edit Order</button>
+      <button class="btn btn-primary" onclick="placeOrder()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Confirm &amp; Place Order
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONFIRMATION PAGE ===================== -->
+<section id="page-confirmation" class="page">
+  <div class="confirmation-container">
+    <div class="confirmation-card">
+      <div class="confirm-check">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>Order Placed Successfully!</h1>
+      <p class="confirm-subtitle">Your print job has been received. Keep your Order ID safe to track your order.</p>
+      <div class="order-id-display">
+        <span class="oid-label">Your Order ID</span>
+        <span class="oid-value" id="confirmOrderId">PE-2024-0001</span>
+        <button class="copy-id-btn" onclick="copyOrderId()" title="Copy Order ID">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <div class="confirm-details" id="confirmDetails">
+        <!-- filled by JS -->
+      </div>
+      <div class="confirm-actions">
+        <button class="btn btn-primary" onclick="showPage('track')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Track My Order
+        </button>
+        <button class="btn btn-outline" onclick="showPage('order')">Place Another Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRACK PAGE ===================== -->
+<section id="page-track" class="page">
+  <div class="page-header">
+    <div class="container">
+      <h1>Track Your Order</h1>
+      <p>Enter your Order ID to see the current status of your print job.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="track-search-box">
+      <div class="track-input-row">
+        <input type="text" id="trackInput" class="text-input track-input" placeholder="e.g. PE-2024-0001" />
+        <button class="btn btn-primary" onclick="trackOrder()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Track
+        </button>
+      </div>
+      <span class="field-error" id="trackError"></span>
+    </div>
+
+    <div id="trackResult" class="track-result hidden">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ADMIN PAGE ===================== -->
+<section id="page-admin" class="page">
+  <div class="page-header admin-header">
+    <div class="container">
+      <h1>Admin Dashboard</h1>
+      <p>Manage all print orders, update statuses, and configure pricing.</p>
+    </div>
+  </div>
+  <div class="container admin-layout">
+
+    <!-- Stats Row -->
+    <div class="admin-stats" id="adminStats">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Tabs -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" data-tab="orders" onclick="switchTab('orders', this)">All Orders</button>
+      <button class="tab-btn" data-tab="pricing" onclick="switchTab('pricing', this)">Manage Pricing</button>
+    </div>
+
+    <!-- Orders Tab -->
+    <div class="tab-content active" id="tab-orders">
+      <div class="orders-filters">
+        <input type="text" id="adminSearch" class="text-input" placeholder="Search by Order ID or name..." oninput="renderAdminOrders()" />
+        <select id="adminFilter" class="text-input select-input" onchange="renderAdminOrders()">
+          <option value="all">All Statuses</option>
+          <option value="pending">Pending</option>
+          <option value="printing">Printing</option>
+          <option value="ready">Ready for Pickup</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div id="adminOrdersList"></div>
+    </div>
+
+    <!-- Pricing Tab -->
+    <div class="tab-content" id="tab-pricing">
+      <div class="pricing-admin-card">
+        <h3>Print Pricing Configuration</h3>
+        <p>Update prices below. Changes apply immediately to new orders.</p>
+        <div class="pricing-admin-grid" id="pricingAdminGrid">
+          <!-- filled by JS -->
+        </div>
+        <button class="btn btn-primary" onclick="savePricing()">Save Pricing</button>
+        <span id="pricingSaved" class="save-indicator"></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
